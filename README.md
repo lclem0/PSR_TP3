@@ -22,7 +22,7 @@
 <!-- PROJECT LOGO ----->
 <br />
 <div align="center">
-<h3 align="center">J.A.R.V.I.S. 3000 Finder</h3>
+<h3 align="center">WALLY</h3>
 
   <p align="center">
     Incorporates the utilization of a deep neural network to categorize objects obtained from 3D models or RGB-D cameras.
@@ -57,7 +57,7 @@
 <!-- Introduction -->
 ## Introduction
 
-The J.A.R.V.I.S. 3000 Finder is an advanced object classification system that uses a deep neural network to identify objects captured from 3D models or RGB-D cameras. This project was developed for an Advanced Industrial Vision Systems class as the second evaluation. The objective is to detect and extract objects from a point cloud and then pass it through a classifier to determine the object's identity and physical characteristics, such as volume and area. 
+The WALLY is an advanced object classification system that uses a deep neural network to identify objects captured from 3D models or RGB-D cameras. This project was developed for an Advanced Industrial Vision Systems class as the second evaluation. The objective is to detect and extract objects from a point cloud and then pass it through a classifier to determine the object's identity and physical characteristics, such as volume and area. 
 
 <!-- ### Built With
 * [![Next][Next.js]][Next-url]
