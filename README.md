@@ -19,7 +19,7 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
-<!-- PROJECT LOGO -->
+<!-- PROJECT LOGO ----->
 <br />
 <div align="center">
 <h3 align="center">J.A.R.V.I.S. 3000 Finder</h3>
