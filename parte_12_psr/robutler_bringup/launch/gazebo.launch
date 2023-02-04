@@ -4,8 +4,8 @@
     <!-- <arg name="world_name" value="$(find turtlebot3_gazebo)/worlds/turtlebot3_house.world"/> -->
 
     <!-- novo mundo com o psr psr_apartment -->
+    <arg name="world_name" value="$(find psr_apartment_description)/worlds/apartment_empty.world"/>
     <!-- <arg name="world_name" value="$(find psr_apartment_description)/worlds/psr_apartment.world"/> -->
-    <arg name="world_name" value="$(find psr_apartment_description)/worlds/psr_apartment.world"/>
 
 
     <arg name="paused" value="false"/>
