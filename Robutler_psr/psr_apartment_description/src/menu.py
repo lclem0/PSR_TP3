@@ -32,9 +32,11 @@ POSSIBILITY OF SUCH DAMAGE.
 from __future__ import print_function
 # from spawn_object import *
 import rospy
+import yaml
 from interactive_markers.interactive_marker_server import *
 from interactive_markers.menu_handler import *
 from visualization_msgs.msg import *
+from spawn_object import models_spawned,room_of_model_spawned,places_of_models_spawned
 
 server = None
 marker_pos = 0
@@ -43,6 +45,7 @@ menu_handler = MenuHandler()
 
 h_first_entry = 0
 h_mode_last = 0
+
 
 def enableCb( feedback ):
     handle = feedback.menu_entry_id
@@ -121,31 +124,46 @@ def deepCb( feedback ):
 
 def initMenu():
     global h_first_entry, h_mode_last
-    h_first_entry = menu_handler.insert( "First Entry" )
-    entry = menu_handler.insert( "deep", parent=h_first_entry)
-    entry = menu_handler.insert( "sub", parent=entry );
-    entry = menu_handler.insert( "menu", parent=entry, callback=deepCb );
 
-    menu_handler.setCheckState( menu_handler.insert( "Show First Entry", callback=enableCb ), MenuHandler.CHECKED )
+    # h_first_entry = menu_handler.insert( "First Entry" )
+    # entry = menu_handler.insert( "deep", parent=h_first_entry)
+    # entry = menu_handler.insert( "sub", parent=entry );
+    # entry = menu_handler.insert( "menu", parent=entry, callback=deepCb );
+    # menu_handler.setCheckState( menu_handler.insert( "Show First Entry", callback=enableCb ), MenuHandler.CHECKED )
+# Import YAML file with division information
 
-    sub_menu_handle = menu_handler.insert( "Switch" )
-    for i in range(5):
-        s = "Mode " + str(i)
-        h_mode_last = menu_handler.insert( s, parent=sub_menu_handle, callback=modeCb )
-        menu_handler.setCheckState( h_mode_last, MenuHandler.UNCHECKED)
+#ver yaml file e configurar o menu certo
+with open("/home/lclem0/catkin_ws/src/PSR_TP3/Robutler_psr/psr_apartment_description/src/apartment_spots.yaml", 'r') as file:
+    pose = yaml.load(file, Loader=yaml.FullLoader)
+    
+    divisions = []
+    for i in range(0, len(pose)):
+        division = pose[i]["room"]
+        divisions.append(division)
+    divisions_list = list(set(divisions))
+h_first_entry = menu_handler.insert( "Go To" )
+entry = menu_handler.insert( "Apartment Divisions", parent=h_first_entry)
+
+for i in range(0, len(divisions_list)):
+    h_mode_last = menu_handler.insert( str(divisions_list[i]), parent=entry, callback=modeCb )
+    menu_handler.setCheckState( h_mode_last, MenuHandler.UNCHECKED)
     # check the very last entry
-    menu_handler.setCheckState( h_mode_last, MenuHandler.CHECKED )
+menu_handler.setCheckState( h_mode_last, MenuHandler.CHECKED )
+#for a division if checked go to the division
 
 
 
-# alteracoes
-# def initMenu():
-#     global h_first_entry, h_mode_last
-#     h_first_entry = menu_handler.insert( "First Entry" )
-#     entry = menu_handler.insert( "Placements", parent=h_first_entry)
-#     for placement in placements:
-#         placement_entry = menu_handler.insert(placement['place'], parent=entry)
-#         menu_handler.setCheckState(placement_entry, MenuHandler.UNCHECKED)
+#unused
+# Check the last division in the YAML file
+# menu_handler.setCheckState( h_mode_last, MenuHandler.CHECKED )
+
+#     sub_menu_handle = menu_handler.insert( "Apartment Subdivisions" )
+#     for i in range(5):
+#         s = "Mode " + str(i)
+#         h_mode_last = menu_handler.insert( s, parent=sub_menu_handle, callback=modeCb )
+#         menu_handler.setCheckState( h_mode_last, MenuHandler.UNCHECKED)
+#     # check the very last entry
+#     menu_handler.setCheckState( h_mode_last, MenuHandler.CHECKED )
 
 
 
@@ -155,7 +173,6 @@ if __name__=="__main__":
     server = InteractiveMarkerServer("menu")
 
     initMenu()
-    
     makeMenuMarker( "marker1" )
     # makeMenuMarker( "marker2" )
 

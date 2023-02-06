@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import random
-
+import yaml
 import rospy
 import rospkg
 from gazebo_msgs.srv import SpawnModel
@@ -55,21 +55,29 @@ placements.append({'pose':Pose(position=Point(x=-1, y=-5, z=0), orientation=Quat
 
 # cant do shrek
 model_names = ['sphere_v','stop_sign','person_standing','beer','bowl','person_walking','fire_hydrant']
-
+models_spawned = []
+places_of_models_spawned = []
+room_of_model_spawned = []
 # Add here several models. All should be added to the robutler_description package
 for i in range(0, int(num_objects)):
+  #random choose a model
   model_name = random.choice(model_names)
-  # model_name = model_names[-1]
-  
+  #save the model
+  models_spawned.append(model_name) 
   f = open( package_path + model_name + '/model.sdf' ,'r')
   sdff = f.read()
 
   rospy.wait_for_service('gazebo/spawn_sdf_model')
   spawn_model_prox = rospy.ServiceProxy('gazebo/spawn_sdf_model', SpawnModel)
   
+  #random choose a placement
   model_placement = random.choice(placements)
+  #remove it so it wont be chosen again
   placements.remove(model_placement)
-  # model_placement = placements[14]
+
+  #save the room and place of the model
+  room_of_model_spawned.append(model_placement['room'])
+  places_of_models_spawned.append(model_placement['place'])
 
   name = model_name + '_in_' + model_placement['place'] + '_of_' + model_placement['room']
   spawn_model_prox(name, sdff, model_name, model_placement['pose'], "world")
