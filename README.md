@@ -120,6 +120,8 @@ O spawn de objectos foi realizado com o auxílio do **ROS Gazebo Spawn Model**, 
 
 O utilizador pode escolher os objectos que pretende spawnar, bem como a sua localização no cenário e até mesmo a quantidade.
 
+Este também pode decidir escolher spawnar obejetos de forma aleatória e numa posição aleatória.
+
 Na imagem seguinte podemos observar as várias localizações onde é possível spawnar os objectos tais como os nomes das divisões do Apartamento:
 
 ![Localizaçõe de Spawn de Objectos](./images/plant_drawing.jpg?raw=true "Localizaçõe de Spawn de Objectos")
@@ -137,31 +139,37 @@ Apenas foi possível implementar o menu interativo, que apenas possui os locais 
 <!-- CENARIO DE TESTES -->
 <h2 align="center"> Para iniciar o programa </h2>
 
-Para iniciar o **Gazebo** com o mapa do Apartamento, deve executar-se o seguinte comando:
+**Para iniciar o **Gazebo** com o mapa do Apartamento, deve executar-se o seguinte comando:**
 ```
 roslaunch robutler_bringup gazebo.launch
 ```
-De seguida, para iniciar o **Rviz**, deve executar-se o seguinte comando:
+**De seguida, para iniciar o **Rviz**, deve executar-se o seguinte comando:**
 ```
 roslaunch robutler_bringup bringup.launch
 ```
 
-Para posicionar o Robô na posição predefinida inicial, deve executar-se o seguinte comando:
+**Para posicionar o Robô na posição predefinida inicial, deve executar-se o seguinte comando:**
 ```
 roslaunch robutler_navigation localization.launch
 ```
 
-Para spawnar os objetos no cenário do Gazebo, deve executar-se o seguinte comando:
+**Para spawnar os objetos no cenário do Gazebo, deve executar-se o seguinte comando:**
+ - Spawn de objectos de forma aleatória:
 ```
-rosrun psr_apartment_description spawn_object.py
+rosrun psr_apartment_description spawn_random_object.py
+```
+- Spawn de objectos onde o utilizador escolhe o objeto e a localização:
+```
+rosrun psr_apartment_description spawn_specific_object.py
 ```
 
-Para ativar a deteção de objetos, deve executar-se o seguinte comando:
+
+**Para ativar a deteção de objetos, deve executar-se o seguinte comando:**
 ```
 roslaunch my_object_recognition_pkg yolo_v2_tiny.launch
 ```
 
-Para enviar o Robô para uma coordenada XYZ RPY, através do terminal, alterando os valores de acordo com os desejados, deve executar-se o seguinte comando:
+**Para enviar o Robô para uma coordenada XYZ RPY, através do terminal, alterando os valores de acordo com os desejados, deve executar-se o seguinte comando:**
 ```
 rostopic pub /move_base/goal geometry_messages/poseStamped
 ```
