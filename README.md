@@ -4,7 +4,9 @@
 PSR Trabalho Prático 3 - Robutler
 </h1>
 
-![Robutler](./images/robo.jpg?raw=true)
+<p align="center">
+  <img src="./images/robo.jpg" width=35% />
+</p>
 
 <!-- SUMARIO -->
 <h2 align="center"> Sumário </h2>
