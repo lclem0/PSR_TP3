@@ -27,7 +27,7 @@ placements.append({'pose':Pose(position=Point(x=-7.33, y=5.29, z=0.58), orientat
             #   adicionar mais sitios
 placements.append({'pose':Pose(position=Point(x=-1.7, y=4.0, z=0.37), orientation=Quaternion(x=0,y=0,z=0,w=1)),
               'room':'second_bedroom', 'place': 'fridge_cabinet'})
-placements.append({'pose':Pose(position=Point(x=-2, y=-5, z=0.4), orientation=Quaternion(x=0,y=0,z=0,w=1)),
+placements.append({'pose':Pose(position=Point(x=-2, y=-4, z=0.0), orientation=Quaternion(x=0,y=0,z=0,w=1)),
               'room':'living_room', 'place': 'sofa'})
 placements.append({'pose':Pose(position=Point(x=1, y=-3, z=0), orientation=Quaternion(x=0,y=0,z=0,w=1)),
               'room':'outside', 'place': 'car_spot'})
