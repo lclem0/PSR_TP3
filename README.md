@@ -4,6 +4,8 @@
 PSR Trabalho Prático 3 - Robutler
 </h1>
 
+![Robutler](./images/robo.jpg?raw=true)
+
 <!-- SUMARIO -->
 <h2 align="center"> Sumário </h2>
 
@@ -105,60 +107,61 @@ Percepção de objetos: O robô deverá ser capaz de identificar e reconhecer ob
 
 Movimentação: O robô deverá ser capaz de se movimentar e se deslocar no cenário, para poder realizar suas missões de forma eficiente.
 
-## Missões
-Realização de tarefas domésticas: O robô mordomo deverá ser capaz de realizar tarefas domésticas, como limpar a casa, cozinhar e organizar o ambiente.
-
-Atendimento a convidados: O robô deverá ser capaz de atender a convidados, oferecendo bebidas e comidas, e ajudando em suas necessidades.
-
-Auxílio no cuidado de pessoas idosas ou deficientes: O robô mordomo deverá ser capaz de auxiliar pessoas idosas ou deficientes, ajudando-as em suas atividades diárias e garantindo sua segurança.
-
-
 
 ***
-## Getting Started
 
-For this projet is used [ROS Noetic](http://wiki.ros.org/ROS/Installation)
+<!-- CENARIO DE TESTES -->
+<h2 align="center"> Para iniciar o programa </h2>
 
-### Installation
-To install the project, clone the repository inside the *src* folder of your *catkin_ws* and run the following lines:
-```
-git clone https://github.com/lclem0/PSR_TP3.git
-cd .. 
-catkin_make
-```
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- USAGE EXAMPLES -->
-
-***
-### Launch the program
-To the map open, with gazebo do:
+Para iniciar o **Gazebo** com o mapa do Apartamento, deve executar-se o seguinte comando:
 ```
 roslaunch robutler_bringup gazebo.launch
 ```
-To add the .....
+De seguida, para iniciar o **Rviz**, deve executar-se o seguinte comando:
 ```
-roslaunch _finder_bringup d_bringup.launch mn:=<model_name> fn:=<folder_name> visualize:=
+roslaunch robutler_bringup bringup.launch
 ```
-***
-<!-- CONTRIBUTING -->
-## Contributing
 
-If you have ideas for improving this project, you can either create a fork of the repository and submit a pull request or open an issue with the label "enhancement". Your support and feedback is greatly appreciated. Don't forget to show your support by giving this project a star! Thank you!
+Para posicionar o Robô na posição predefinida inicial, deve executar-se o seguinte comando:
+```
+roslaunch robutler_navigation localization.launch
+```
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+Para spawnar os objetos no cenário, onde o utilizador pode escolher o número de objetos a serem spawnados,  até um máximo de 7, deve executar-se o seguinte comando:
+```
+rosrun psr_apartment_description spawn_object.py
+```
+
+Para ativar a deteção de objetos, deve executar-se o seguinte comando:
+```
+roslaunch my_object_recognition_pkg yolo_v2_tiny.launch
+```
+
+Para enviar o Robô para uma coordenada XYZ RPY, através do terminal, alterando os valores de acordo com os desejados, deve executar-se o seguinte comando:
+```
+rostopic pub /move_base/goal geometry_messages/poseStamped
+```
+## Para uma execução mais rápida
+Desenvolveu-se um script que permite executar todos os comandos necessários para a execução do programa, de forma a que o utilizador não tenha de executar todos os comandos manualmente. Para isto deve executar-se o seguinte comando:
+```
+roslaunch robutler_bringup master.launch
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+***
+<!-- CONTRIBUTING -->
+## Contribuições
 
+Se tiveres ideias para melhorar este projeto, podes criar um fork do repositório e submeter um pedido de pull ou abrir uma questão com a etiqueta "melhoria". A tua ajuda e feedback é muito apreciado. Não te esqueças de mostrar o teu apoio atribuindo uma estrela a este projeto! Obrigado!
 
+1. Dá fork ao projeto 
+2. Cria a tua própria branch (`git checkout -b feature/AmazingFeature`)
+3. Dá commit ás tuas alterações  (`git commit -m 'Add some AmazingFeature'`)
+4. Dá push das tuas alterações para a branch (`git push origin feature/AmazingFeature`)
+5. Faz um pedido de pull do projeto original
 
-
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTACTOS -->
 ## Contactos
@@ -171,12 +174,12 @@ Mateus Araújo - mateus.araujo@ua.pt
 
 Rafael Mendes - mendes.rafael@ua.pt
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- AGRADECIMENTOS -->
 ## Agradecimentos
 
-* Professor Miguel Oliveira - mriem@ua.pt
+Professor Miguel Oliveira - mriem@ua.pt
+
+***
+###### Programação de Sistemas Robóticos 2022/2023 - Universidade de Aveiro
