@@ -104,6 +104,15 @@ Na imagem seginte pode ser observado os resultados obtidos com o modelo Yolo v2 
 
 ![Percepção de Objetos](./images/object_detection.jpg?raw=true "Percepção de Objetos")
 
+## Spawn de objectos no Apartamento 
+Para o spawn de objectos no cenário, foi utilizado o **Gazebo**, que é um simulador de robôs 3D, que permite a criação de cenários complexos, com a possibilidade de spawn de objectos, de forma a que o Robô possa interagir com eles.
+
+O spawn de objectos foi realizado com o auxílio do **ROS Gazebo Spawn Model**, que é um pacote ROS que permite a criação de objectos no cenário do Gazebo.
+
+É possivel spawnar até 7 objectos diferentes, sendo que cada um deles não irá ocupar um espaço já ocupado por outro objecto.
+
+O utilizador pode escolher os objectos que pretende spawnar, bem como a sua localização no cenário e até mesmo a quantidade.
+
 ## Missões
 Percepção de objetos: O robô deverá ser capaz de identificar e reconhecer objetos no cenário, de modo a ser capaz de interagir com eles de forma adequada.
 
@@ -129,7 +138,7 @@ Para posicionar o Robô na posição predefinida inicial, deve executar-se o seg
 roslaunch robutler_navigation localization.launch
 ```
 
-Para spawnar os objetos no cenário, onde o utilizador pode escolher o número de objetos a serem spawnados,  até um máximo de 7, deve executar-se o seguinte comando:
+Para spawnar os objetos no cenário do Gazebo, deve executar-se o seguinte comando:
 ```
 rosrun psr_apartment_description spawn_object.py
 ```
