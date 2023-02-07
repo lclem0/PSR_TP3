@@ -5,7 +5,7 @@ from geometry_msgs.msg import PoseStamped
 
 def move_to_goal():
     rospy.init_node('publisher_node', anonymous=True)
-    pub = rospy.Publisher('/move_base_simple/goal', PoseStamped, queue_size=10)
+    pub = rospy.Publisher('/move_base/goal', PoseStamped, queue_size=10)
     rate = rospy.Rate(10)  # 10hz
     
     goal = PoseStamped()
