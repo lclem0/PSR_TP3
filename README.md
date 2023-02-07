@@ -29,11 +29,11 @@ O cenário será composto por vários objetos populando o apartamento, tais como
 
 A **planta** do apartamento pode ser observada na imagem seguinte:
 
-![Planta do Apartamento](/repository/images/apartamento.jpg?raw=true "Planta do Apartamento")
+![Planta do Apartamento](./images/apartamento.jpg?raw=true "Planta do Apartamento")
 
 O apartamento simulado em **Gazebo** pode ser observado na imagem seguinte:
 
-![Apartamento em Gazebo - psr_apartment](/repository/images/apartamento_gazebo.jpg?raw=true "Apartamento em Gazebo - psr_apartment")
+![Apartamento em Gazebo - psr_apartment](./images/apartamento.gazebo.jpg?raw=true "Apartamento em Gazebo - psr_apartment")
 
 <!-- OBJETIVOS -->
 <h2 align="center"> Objetivos </h2>
@@ -54,15 +54,15 @@ O Robô possui as seguintes características, observáveis na listagem seguinte:
 
 Nas duas imagens seguintes observa-se o Robô e as características mencionadas anteriormente:
 
-![Robô Waffle_pi - Dimensões e peso](/repository/images/waffle_pi.jpg?raw=true "Robô Waffle_pi - Dimensões e peso")
+![Robô Waffle_pi - Dimensões e peso](./images/waffle_pi.jpg?raw=true "Robô Waffle_pi - Dimensões e peso")
 
-![Robô Waffle_pi - Estrutura](/repository/images/waffle_pi2.jpg?raw=true "Robô Waffle_pi - Estrutura")
+![Robô Waffle_pi - Estrutura](./images/waffle_pi2.jpg?raw=true "Robô Waffle_pi - Estrutura")
 
 No entanto, esta plataforma foi modificada, havendo um aumento da altura da Câmera Raspberry Pi, para que fosse possível ao Robô visualizar certos objetos que possam ser colocados em cima das mesas ou bancadas.
 
 Na seguinte imagem temos uma vista do Robô com a Câmera Raspberry Pi modificada, bem como a sua estrutura:
 
-![Robô Robutler](/repository/images/robutler.jpg?raw=true "Robô Robutler")
+![Robô Robutler](./images/robutler.jpg?raw=true "Robô Robutler")
 
 ## Mapeamento do Cenário
 
@@ -72,7 +72,7 @@ Em inglês Simultaneous localization and mapping, também conhecido como SLAM, �
 
 O mapa obtido após o mapeamento foi o seguinte:
 
-![Mapeamento do Apartamento](/repository/images/saved_map.jpg?raw=true "Mapeamento do Apartamento")
+![Mapeamento do Apartamento](./images/saved_map.jpg?raw=true "Mapeamento do Apartamento")
 
 
 ## Movimentação do Robô pelo Apartamento
@@ -98,7 +98,7 @@ O modelo foi treinado com o auxílio do **Darknet**, que é uma biblioteca de re
 
 Na imagem seginte pode ser observado os resultados obtidos com o modelo Yolo v2 Tiny ao longo dos objectos existentes no Apartamento:
 
-![Percepção de Objetos](/repository/images/object_detection.jpg?raw=true "Percepção de Objetos")
+![Percepção de Objetos](./images/object_detection.jpg?raw=true "Percepção de Objetos")
 
 ## Missões
 Percepção de objetos: O robô deverá ser capaz de identificar e reconhecer objetos no cenário, de modo a ser capaz de interagir com eles de forma adequada.
