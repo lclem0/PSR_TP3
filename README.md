@@ -29,7 +29,7 @@ O cenário será composto por vários objetos populando o apartamento, tais como
 
 A **planta** do apartamento pode ser observada na imagem seguinte:
 
-![Planta do Apartamento](/repository/images/apartamento.jpg?raw=true "Planta do Apartamento")
+![Planta do Apartamento](github.com/lclem0/PSR_TP3/images/apartamento.jpg?raw=true "Planta do Apartamento")
 
 O apartamento simulado em **Gazebo** pode ser observado na imagem seguinte:
 
