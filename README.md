@@ -113,6 +113,10 @@ O spawn de objectos foi realizado com o auxílio do **ROS Gazebo Spawn Model**, 
 
 O utilizador pode escolher os objectos que pretende spawnar, bem como a sua localização no cenário e até mesmo a quantidade.
 
+Na imagem seguinte podemos observar as várias localizações onde é possível spawnar os objectos tais como os nomes das divisões do Apartamento:
+
+![Localizaçõe de Spawn de Objectos](./images/plant_drawing.jpg?raw=true "Localizaçõe de Spawn de Objectos")
+
 ## Missões
 Percepção de objetos: O robô deverá ser capaz de identificar e reconhecer objetos no cenário, de modo a ser capaz de interagir com eles de forma adequada.
 
