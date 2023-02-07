@@ -33,7 +33,7 @@ A **planta** do apartamento pode ser observada na imagem seguinte:
 
 O apartamento simulado em **Gazebo** pode ser observado na imagem seguinte:
 
-![Apartamento em Gazebo - psr_apartment](./images/apartamento_gazebo.jpg?raw=true "Apartamento em Gazebo - psr_apartment")
+![Apartamento em Gazebo - psr_apartment](./images/apartamento.gazebo.jpg?raw=true "Apartamento em Gazebo - psr_apartment")
 
 <!-- OBJETIVOS -->
 <h2 align="center"> Objetivos </h2>
