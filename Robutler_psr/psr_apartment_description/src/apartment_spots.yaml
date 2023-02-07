@@ -48,7 +48,7 @@
       z: 0
       w: 1
   room: living_room
-  place: sofa
+  place: ground
 
 - pose:
     position:
@@ -86,8 +86,8 @@
       y: 0
       z: 0
       w: 1
-  room: bathroom
-  place: toilet
+  room: bathroom_toilet
+  place: ground
 
 - pose:
     position:
@@ -125,7 +125,7 @@
       y: 0
       z: 0
       w: 1
-  room: first_bathroom
+  room: empty_bathroom
   place: ground
 
 - pose:
@@ -166,19 +166,6 @@
       w: 1
   room: kitchen
   place: counter
-
-- pose: 
-    position: 
-      x: -4.5
-      y: -2
-      z: 0
-    orientation: 
-      x: 0
-      y: 0
-      z: 1
-      w: 1
-  room: living_room
-  place: ground
 
 - pose: 
     position: 
