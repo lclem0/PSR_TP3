@@ -1,6 +1,6 @@
 local_costmap:
   # global_frame: odom # Why not map?
-  global_frame: map # Why not map?
+  global_frame: odom # Why not map?
   robot_base_frame: base_footprint
 
   update_frequency: 10.0

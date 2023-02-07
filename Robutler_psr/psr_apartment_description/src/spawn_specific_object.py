@@ -52,9 +52,9 @@ else:
 
 placements = []
 placements.append({'pose':Pose(position=Point(x=-5.69, y=4.37, z=0.6), orientation=Quaternion(x=0,y=0,z=0,w=1)),
-              'room':'large_bedroom', 'place': 'bed'})
+              'room':'first_bedroom', 'place': 'bed'})
 placements.append({'pose':Pose(position=Point(x=-7.33, y=5.29, z=0.58), orientation=Quaternion(x=0,y=0,z=0,w=1)),
-              'room':'large_bedroom', 'place': 'bedside_cabinet'})
+              'room':'first_bedroom', 'place': 'bedside_cabinet'})
             #   adicionar mais sitios
 placements.append({'pose':Pose(position=Point(x=-1.7, y=4.0, z=0.37), orientation=Quaternion(x=0,y=0,z=0,w=1)),
               'room':'second_bedroom', 'place': 'fridge_cabinet'})
@@ -63,9 +63,9 @@ placements.append({'pose':Pose(position=Point(x=-2, y=-4, z=0.0), orientation=Qu
 placements.append({'pose':Pose(position=Point(x=1, y=-3, z=0), orientation=Quaternion(x=0,y=0,z=0,w=1)),
               'room':'outside', 'place': 'car_spot'})
 placements.append({'pose':Pose(position=Point(x=-6, y=-2, z=0.765), orientation=Quaternion(x=0,y=0,z=0,w=1)),
-              'room':'living_room', 'place': 'cafe_table'})
+              'room':'living_room', 'place': 'coffee_table'})
 placements.append({'pose':Pose(position=Point(x=1.74, y=-0.7, z=0.5), orientation=Quaternion(x=0,y=0,z=0,w=1)),
-              'room':'bathroom_toilet', 'place': 'ground'})
+              'room':'bathroom_toilet', 'place': 'toilet'})
 placements.append({'pose':Pose(position=Point(x=-2.5, y=5, z=0), orientation=Quaternion(x=0,y=0,z=0,w=1)),
               'room':'second_bedroom', 'place': 'ground'})
 placements.append({'pose':Pose(position=Point(x=0, y=5, z=0), orientation=Quaternion(x=0,y=0,z=0,w=1)),

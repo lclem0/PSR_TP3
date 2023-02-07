@@ -5,8 +5,13 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
+        - /RobotModel1
+        - /LaserScan1
         - /TF1/Frames1
         - /PoseWithCovariance1/Covariance1
+        - /Marker1
+        - /Marker1/Namespaces1
+        - /Marker2
       Splitter Ratio: 0.5
     Tree Height: 719
   - Class: rviz/Selection
@@ -352,6 +357,22 @@ Visualization Manager:
       Show Visual Aids: false
       Update Topic: /menu/update
       Value: true
+    - Class: rviz/Marker
+      Enabled: true
+      Marker Topic: /marker_basic
+      Name: Marker
+      Namespaces:
+        {}
+      Queue Size: 100
+      Value: true
+    - Class: rviz/Marker
+      Enabled: true
+      Marker Topic: visualization_marker
+      Name: Marker
+      Namespaces:
+        {}
+      Queue Size: 100
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 255; 255; 255
@@ -380,7 +401,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 15.482758522033691
+      Distance: 17.52353858947754
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -388,17 +409,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: -6.446682453155518
-        Y: 0.6358388662338257
-        Z: -1.6465801000595093
+        X: -5.0132880210876465
+        Y: 1.399207592010498
+        Z: -2.1329305171966553
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.8397964239120483
+      Pitch: 0.7747964859008789
       Target Frame: <Fixed Frame>
-      Yaw: 5.310399532318115
+      Yaw: 5.495399475097656
     Saved: ~
 Window Geometry:
   Displays:

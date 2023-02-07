@@ -8,7 +8,7 @@
       y: 0
       z: 0
       w: 1
-  room: large_bedroom
+  room: first_bedroom
   place: bed
 
 - pose:
@@ -21,7 +21,7 @@
       y: 0
       z: 0
       w: 1
-  room: large_bedroom
+  room: first_bedroom
   place: bedside_cabinet
 
 - pose:
@@ -74,7 +74,7 @@
       z: 0
       w: 1
   room: living_room
-  place: cafe_table
+  place: coffee_table
 
 - pose:
     position:
@@ -87,7 +87,7 @@
       z: 0
       w: 1
   room: bathroom_toilet
-  place: ground
+  place: toilet
 
 - pose:
     position:

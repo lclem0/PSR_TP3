@@ -35,7 +35,7 @@ import copy
 from interactive_markers.interactive_marker_server import *
 from interactive_markers.menu_handler import *
 from visualization_msgs.msg import *
-from geometry_msgs.msg import Point
+from geometry_msgs.msg import Point,PoseStamped
 from tf.broadcaster import TransformBroadcaster
 
 from random import random
@@ -422,8 +422,15 @@ if __name__=="__main__":
     
     # create a timer to update the published transforms
     rospy.Timer(rospy.Duration(0.01), frameCallback)
-
+    # create an interactive marker server on the topic namespace simple_marker
     server = InteractiveMarkerServer("basic_controls")
+
+    #publish pose updates
+    pub = rospy.Publisher('pose_update', PoseStamped, queue_size=10)
+
+    #publish in the scan topic
+    pub_scan = rospy.Publisher('scan', LaserScan, queue_size=10)
+
 
     menu_handler.insert( "First Entry", callback=processFeedback )
     menu_handler.insert( "Second Entry", callback=processFeedback )

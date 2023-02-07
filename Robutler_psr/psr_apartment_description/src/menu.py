@@ -144,12 +144,16 @@ def initMenu():
         # check the very last entry
     menu_handler.setCheckState( h_mode_last, MenuHandler.CHECKED )
 
-    #tried to check the last division and print it but it doesnt work 
-    # for i in range(0, len(divisions_list)):
-    #     h_mode_last = menu_handler.insert(str(divisions_list[i]), parent=entry, callback=modeCb)
-    # if menu_handler.getCheckState(h_mode_last) == MenuHandler.CHECKED:
-    #     checked_division = divisions_list[i]
-    #     print("Checked Division:", str(checked_division))
+    sub_menu_handle = menu_handler.insert( "Missions")
+    h_mode_last = menu_handler.insert( "Go to Second Bedroom", parent=sub_menu_handle, callback=modeCb )
+    h_mode_last = menu_handler.insert( "Go Outside", parent=sub_menu_handle, callback=modeCb )
+    h_mode_last = menu_handler.insert( "Check if there is any person in the First Bedroom", parent=sub_menu_handle, callback=modeCb )
+    h_mode_last = menu_handler.insert( "Go find a purple ball", parent=sub_menu_handle, callback=modeCb )
+    h_mode_last = menu_handler.insert( "Check if the laptop is in the Office", parent=sub_menu_handle, callback=modeCb )
+    h_mode_last = menu_handler.insert( "Go walk around the house", parent=sub_menu_handle, callback=modeCb )
+    # check the very last entry
+    menu_handler.setCheckState( h_mode_last, MenuHandler.CHECKED )
+   
 
 
 if __name__=="__main__":
