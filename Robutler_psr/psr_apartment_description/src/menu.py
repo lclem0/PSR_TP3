@@ -37,7 +37,7 @@ from interactive_markers.interactive_marker_server import *
 from interactive_markers.menu_handler import *
 from visualization_msgs.msg import *
 from geometry_msgs.msg import PoseStamped
-from spawn_object import models_spawned,room_of_model_spawned,places_of_models_spawned
+# from spawn_object import models_spawned,room_of_model_spawned,places_of_models_spawned
 
 server = None
 marker_pos = 0
@@ -126,13 +126,6 @@ def deepCb( feedback ):
 def initMenu():
     global h_first_entry, h_mode_last
 
-    # h_first_entry = menu_handler.insert( "First Entry" )
-    # entry = menu_handler.insert( "deep", parent=h_first_entry)
-    # entry = menu_handler.insert( "sub", parent=entry );
-    # entry = menu_handler.insert( "menu", parent=entry, callback=deepCb );
-    # menu_handler.setCheckState( menu_handler.insert( "Show First Entry", callback=enableCb ), MenuHandler.CHECKED )
-# Import YAML file with division information
-
 #ver yaml file e configurar o menu certo
     with open("/home/lclem0/catkin_ws/src/PSR_TP3/Robutler_psr/psr_apartment_description/src/apartment_spots.yaml", 'r') as file:
         pose = yaml.load(file, Loader=yaml.FullLoader)
@@ -150,56 +143,24 @@ def initMenu():
         menu_handler.setCheckState( h_mode_last, MenuHandler.UNCHECKED)
         # check the very last entry
     menu_handler.setCheckState( h_mode_last, MenuHandler.CHECKED )
-#for a division if checked go to the division
 
-
-
-#se a divisao estiver marcada, ir para a divisao
-    # if menu_handler.getCheckState( h_mode_last ) == MenuHandler.CHECKED:
-        
-
-
-#unused
-# Check the last division in the YAML file
-# menu_handler.setCheckState( h_mode_last, MenuHandler.CHECKED )
-
-#     sub_menu_handle = menu_handler.insert( "Apartment Subdivisions" )
-#     for i in range(5):
-#         s = "Mode " + str(i)
-#         h_mode_last = menu_handler.insert( s, parent=sub_menu_handle, callback=modeCb )
-#         menu_handler.setCheckState( h_mode_last, MenuHandler.UNCHECKED)
-#     # check the very last entry
-#     menu_handler.setCheckState( h_mode_last, MenuHandler.CHECKED )
-
-
-# def callback(msg):
-#     # Access the desired pose
-#     desired_pose = msg.pose
-
-#     # Extract the x, y, and z coordinates
-#     x = desired_pose.position.x
-#     y = desired_pose.position.y
-#     z = desired_pose.position.z
-
-#     # Perform the necessary actions to move the robot to the desired coordinates
-#     # Example: Call a function or a service that moves the robot to the desired location
-#     move_robot(x, y, z)
-
-# def move_robot(x, y, z):
-#     # Implementation to move the robot to the desired location
-#     # Example: Publish to a topic that controls the robot's movement
-#     rospy.loginfo("Moving robot to (%f, %f, %f)", x, y, z)
+    #tried to check the last division and print it but it doesnt work 
+    # for i in range(0, len(divisions_list)):
+    #     h_mode_last = menu_handler.insert(str(divisions_list[i]), parent=entry, callback=modeCb)
+    # if menu_handler.getCheckState(h_mode_last) == MenuHandler.CHECKED:
+    #     checked_division = divisions_list[i]
+    #     print("Checked Division:", str(checked_division))
 
 
 if __name__=="__main__":
     rospy.init_node("menu")
-    rospy.init_node("move_robot")
+    # rospy.init_node("move_robot")
     
     server = InteractiveMarkerServer("menu")
     #how to go to each division coordinates from yaml file
 
     initMenu()
-    sub = rospy.Subscriber("move_base_simple/goal", PoseStamped, callback=modeCb)
+    # sub = rospy.Subscriber("move_base_simple/goal", PoseStamped, callback=modeCb)
 
     makeMenuMarker( "marker1" )
     # makeMenuMarker( "marker2" )
@@ -207,6 +168,7 @@ if __name__=="__main__":
     menu_handler.apply( server, "marker1" )
     # menu_handler.apply( server, "marker2" )
     server.applyChanges()
+    # rospy.loginfo("Going to" + str(h_mode_last))
 
     rospy.spin()
 

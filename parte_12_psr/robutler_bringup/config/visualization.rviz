@@ -7,7 +7,6 @@ Panels:
         - /Global Options1
         - /TF1/Frames1
         - /PoseWithCovariance1/Covariance1
-        - /InteractiveMarkers1
       Splitter Ratio: 0.5
     Tree Height: 719
   - Class: rviz/Selection
@@ -161,36 +160,10 @@ Visualization Manager:
       Use rainbow: true
       Value: true
     - Class: rviz/TF
-      Enabled: true
+      Enabled: false
       Frame Timeout: 15
       Frames:
         All Enabled: false
-        base_footprint:
-          Value: true
-        base_link:
-          Value: true
-        base_scan:
-          Value: true
-        camera_link:
-          Value: true
-        camera_rgb_frame:
-          Value: true
-        camera_rgb_optical_frame:
-          Value: true
-        caster_back_left_link:
-          Value: true
-        caster_back_right_link:
-          Value: true
-        imu_link:
-          Value: true
-        map:
-          Value: true
-        odom:
-          Value: true
-        wheel_left_link:
-          Value: true
-        wheel_right_link:
-          Value: true
       Marker Alpha: 1
       Marker Scale: 0.30000001192092896
       Name: TF
@@ -198,28 +171,9 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        map:
-          odom:
-            base_footprint:
-              base_link:
-                base_scan:
-                  {}
-                camera_link:
-                  camera_rgb_frame:
-                    camera_rgb_optical_frame:
-                      {}
-                caster_back_left_link:
-                  {}
-                caster_back_right_link:
-                  {}
-                imu_link:
-                  {}
-                wheel_left_link:
-                  {}
-                wheel_right_link:
-                  {}
+        {}
       Update Interval: 0
-      Value: true
+      Value: false
     - Angle Tolerance: 0.10000000149011612
       Class: rviz/Odometry
       Covariance:
@@ -426,7 +380,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 14.21845531463623
+      Distance: 15.482758522033691
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -434,17 +388,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: -1.0200424194335938
-        Y: 0.7688262462615967
-        Z: -3.481954574584961
+        X: -6.446682453155518
+        Y: 0.6358388662338257
+        Z: -1.6465801000595093
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.8747965097427368
+      Pitch: 0.8397964239120483
       Target Frame: <Fixed Frame>
-      Yaw: 3.525399923324585
+      Yaw: 5.310399532318115
     Saved: ~
 Window Geometry:
   Displays:

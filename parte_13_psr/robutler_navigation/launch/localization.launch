@@ -2,8 +2,8 @@
     <!-- Arguments -->
 
     <arg name="laser_scan_topic" default="/scan"/>
-    <arg name="initial_pose_x" default="0.0"/>
-    <arg name="initial_pose_y" default="0.0"/>
+    <arg name="initial_pose_x" default="-5.5"/>
+    <arg name="initial_pose_y" default="-1.0"/>
     <arg name="initial_pose_a" default="0.0"/>
 
     <!-- Map server -->
