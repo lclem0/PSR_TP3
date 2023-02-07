@@ -39,10 +39,13 @@ O apartamento simulado em **Gazebo** pode ser observado na imagem seguinte:
 
 ![Apartamento em Gazebo - psr_apartment](./images/apartamento.gazebo.jpg?raw=true "Apartamento em Gazebo - psr_apartment")
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 <!-- OBJETIVOS -->
 <h2 align="center"> Objetivos </h2>
 
 Nas seguintes secções serão apresentados os objetivos do projeto, bem como as funcionalidades que o Robô possui. 
+
 
 ## Configuração do Robô
 O Robô utilizado foi baseado num ***Turtlebot3 Waffle_pi***. 
@@ -68,6 +71,8 @@ Na seguinte imagem temos uma vista do Robô com a Câmera Raspberry Pi modificad
 
 ![Robô Robutler](./images/robutler.jpg?raw=true "Robô Robutler")
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## Mapeamento do Cenário
 
 O mapeamento do cenário foi realizado com o auxílio do **ROS Navigation Stack**, que é um conjunto de pacotes ROS que fornecem uma implementação de referência para o algoritmo de mapeamento SLAM e para o algoritmo de navegação baseado em mapas.
@@ -78,6 +83,7 @@ O mapa obtido após o mapeamento foi o seguinte:
 
 ![Mapeamento do Apartamento](./images/saved_map.jpg?raw=true "Mapeamento do Apartamento")
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Movimentação do Robô pelo Apartamento
 O Robô desenvolvido é capaz de se movimentar pelo cenário, de forma a realizar as suas missões. 
@@ -89,9 +95,8 @@ A sua movimentação pode ser feita de várias formas, tais como:
 - Por condução autónoma com o auxílio do ROS Navigation Stack:
     - Por condução autónoma para um alvo expresso em coordenadas X,Y;
     - Por terminal (comandos ROS);
-    - Por condução autónoma para um alvo expresso com informação semântica;
-    - Por marcadores de navegação. 
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Perceção
 Para a perceção do Robô dos variados objetos que serão spawnados, utilizou-se o **Yolo v2 Tiny**, que é um modelo de reconhecimento de objectos que utiliza redes neurais convolucionais para detetar objectos em imagens. 
@@ -104,42 +109,67 @@ Na imagem seginte pode ser observado os resultados obtidos com o modelo Yolo v2 
 
 ![Percepção de Objetos](./images/object_detection.jpg?raw=true "Percepção de Objetos")
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Spawn de objectos no Apartamento 
+Para o spawn de objectos no cenário, foi utilizado o **Gazebo**, que é um simulador de robôs 3D, que permite a criação de cenários complexos, com a possibilidade de spawn de objectos, de forma a que o Robô possa interagir com eles.
+
+O spawn de objectos foi realizado com o auxílio do **ROS Gazebo Spawn Model**, que é um pacote ROS que permite a criação de objectos no cenário do Gazebo.
+
+É possivel spawnar até 7 objectos diferentes, sendo que cada um deles não irá ocupar um espaço já ocupado por outro objecto.
+
+O utilizador pode escolher os objectos que pretende spawnar, bem como a sua localização no cenário e até mesmo a quantidade.
+
+Este também pode decidir escolher spawnar obejetos de forma aleatória e numa posição aleatória.
+
+Na imagem seguinte podemos observar as várias localizações onde é possível spawnar os objectos tais como os nomes das divisões do Apartamento:
+
+![Localizaçõe de Spawn de Objectos](./images/plant_drawing.jpg?raw=true "Localizaçõe de Spawn de Objectos")
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## Missões
-Percepção de objetos: O robô deverá ser capaz de identificar e reconhecer objetos no cenário, de modo a ser capaz de interagir com eles de forma adequada.
+Devido a um erro na bibliteca Actionlib, não foi possível implementar as missões.
 
-Movimentação: O robô deverá ser capaz de se movimentar e se deslocar no cenário, para poder realizar suas missões de forma eficiente.
+Apenas foi possível implementar o menu interativo, que apenas possui os locais onde é possível movimentar o Robô tal como o envio do robô para a posições X,Y através do terminal.
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ***
-
 <!-- CENARIO DE TESTES -->
 <h2 align="center"> Para iniciar o programa </h2>
 
-Para iniciar o **Gazebo** com o mapa do Apartamento, deve executar-se o seguinte comando:
+**Para iniciar o **Gazebo** com o mapa do Apartamento, deve executar-se o seguinte comando:**
 ```
 roslaunch robutler_bringup gazebo.launch
 ```
-De seguida, para iniciar o **Rviz**, deve executar-se o seguinte comando:
+**De seguida, para iniciar o **Rviz**, deve executar-se o seguinte comando:**
 ```
 roslaunch robutler_bringup bringup.launch
 ```
 
-Para posicionar o Robô na posição predefinida inicial, deve executar-se o seguinte comando:
+**Para posicionar o Robô na posição predefinida inicial, deve executar-se o seguinte comando:**
 ```
 roslaunch robutler_navigation localization.launch
 ```
 
-Para spawnar os objetos no cenário, onde o utilizador pode escolher o número de objetos a serem spawnados,  até um máximo de 7, deve executar-se o seguinte comando:
+**Para spawnar os objetos no cenário do Gazebo, deve executar-se o seguinte comando:**
+ - Spawn de objectos de forma aleatória:
 ```
-rosrun psr_apartment_description spawn_object.py
+rosrun psr_apartment_description spawn_random_object.py
+```
+- Spawn de objectos onde o utilizador escolhe o objeto e a localização:
+```
+rosrun psr_apartment_description spawn_specific_object.py
 ```
 
-Para ativar a deteção de objetos, deve executar-se o seguinte comando:
+
+**Para ativar a deteção de objetos, deve executar-se o seguinte comando:**
 ```
 roslaunch my_object_recognition_pkg yolo_v2_tiny.launch
 ```
 
-Para enviar o Robô para uma coordenada XYZ RPY, através do terminal, alterando os valores de acordo com os desejados, deve executar-se o seguinte comando:
+**Para enviar o Robô para uma coordenada XYZ RPY, através do terminal, alterando os valores de acordo com os desejados, deve executar-se o seguinte comando:**
 ```
 rostopic pub /move_base/goal geometry_messages/poseStamped
 ```
